@@ -14,7 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 
 //CSRF 해제하기
-@Configuration
+//@Configuration
 public class BasicAuthSecurityConfiguration {
 
 	@Bean
