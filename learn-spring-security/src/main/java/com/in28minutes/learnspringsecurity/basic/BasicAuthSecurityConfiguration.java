@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 
 //CSRF 해제하기
-//@Configuration
+@Configuration
 public class BasicAuthSecurityConfiguration {
 
 	@Bean
@@ -25,7 +25,9 @@ public class BasicAuthSecurityConfiguration {
 
 		http.authorizeHttpRequests(
 				auth -> {
-						auth.anyRequest().authenticated();
+						auth
+						.requestMatchers("/users").hasRole("USER")  // Global Security
+						.anyRequest().authenticated();
 				});
 		http.sessionManagement(
 				session -> 

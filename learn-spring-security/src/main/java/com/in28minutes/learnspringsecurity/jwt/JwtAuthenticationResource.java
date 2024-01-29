@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+//@RestController
 public class JwtAuthenticationResource {
 
 	private JwtEncoder jwtEncoder;
@@ -37,10 +37,10 @@ public class JwtAuthenticationResource {
 							.subject(authentication.getName()) // 주제 설정 - 주체 이름
 							.claim("scope", createScope(authentication)) // 3번 권한에 대한 설정을 scope에 설정한다.
 							.build();
-						
-		//4. Jwt 토튼 만들기 위해 JwtEncoder 생성 --> 파라미터 필요 --> claims
+		//4. Jwt 토튼 만들기 위해 JwtEncoder 생성 --> 파라미터 필요 --> claims  
 		return jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
 	}
+	
 	// 3. 특정한 유저가 가진 권한 - 나는 메소드 설정 --> 모든 권한에 대해 
 	private String createScope(Authentication authentication) {
 		// 메서드에서 모든 권한을 받을것이다.

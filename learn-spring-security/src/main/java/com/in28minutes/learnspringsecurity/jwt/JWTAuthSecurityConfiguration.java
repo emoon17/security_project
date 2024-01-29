@@ -34,7 +34,7 @@ import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 
 //CSRF 해제하기
-@Configuration
+//@Configuration
 public class JWTAuthSecurityConfiguration {
 
 	// SecurityFilterChain으로 Spring Security에서 보안 필터를 연결하고 구성
