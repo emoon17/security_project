@@ -7,6 +7,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
@@ -18,6 +19,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 //CSRF 해제하기
 @Configuration
+//메서드 보안
+@EnableMethodSecurity
 public class BasicAuthSecurityConfiguration {
 
 	@Bean
